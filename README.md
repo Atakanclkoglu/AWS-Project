@@ -1,11 +1,11 @@
 **Project Architecture**
 
-![](Aspose.Words.78ce8b40-409d-4cc0-8919-69485320ca00.001.jpeg)
+![](resim1.jpeg)
 
 - This application will run on EC2 virtual machines that we will create in the Auto Scaling group. The Auto Scaling group will create at least three virtual machines, at least one on each of our public subnets. If these virtual machines consume more than 90% CPU, it will increase their number to up to five virtual machines. All these virtual machines will be placed behind a Load Balancer that we will create to ensure load distribution. Later, it will be quickly accessible from all over the world with a CloudFront distribution we will create, and this web-based application will be accessed from a URL such as www.proje.com using the Route 53 DNS service.
 - Our application will write users' images to the EFS drive shared by EC2 machines; Name, e-mail and phone information will be recorded in the RDS database. Then, users will store the images they uploaded in the S3 bucket and make a backup in another S3 bucket using the Lambda function in the same way.
 
-![](Aspose.Words.78ce8b40-409d-4cc0-8919-69485320ca00.002.jpeg)
+![](resim2.jpeg)
 
 AWS's infrastructure provides a hierarchical structure for organizing and managing various services and resources. This structure consists of components such as **Region**, **Availability Zone** and **VPC (Virtual Private Cloud)**. Here is the explanation of this hierarchy:
 
